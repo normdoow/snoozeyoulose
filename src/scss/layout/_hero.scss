@@ -66,6 +66,14 @@
     transform: translate(15%, 17%)
 }
 
+.inline-form {
+    display: flex;
+}
+
+.take-space {
+    width: 280px;
+}
+
 .hero-ball,
 .hero-squares {
     position: absolute;
