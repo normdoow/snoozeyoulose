@@ -57,6 +57,15 @@
     }
 }
 
+.overlay {
+    position: absolute;
+    width: 213px;
+    height: auto;
+    margin-left: auto;
+    -webkit-transform: translate(15%, 17%);
+    transform: translate(15%, 17%)
+}
+
 .hero-ball,
 .hero-squares {
     position: absolute;
@@ -109,6 +118,15 @@
         svg {
             width: 640px;
         }
+    }
+
+    .overlay {
+        position: absolute;
+        width: 320px;
+        height: auto;
+        margin-left: auto;
+        -webkit-transform: translate(15%, 17%);
+        transform: translate(15%, 17%)
     }
 
     .hero-ball-2 {
@@ -171,6 +189,15 @@
         svg {
             width: 800px;
         }
+    }
+
+    .overlay {
+        position: absolute;
+        width: 400px;
+        height: auto;
+        margin-left: auto;
+        -webkit-transform: translate(15%, 17%);
+        transform: translate(15%, 17%)
     }
 
     .hero-form {
