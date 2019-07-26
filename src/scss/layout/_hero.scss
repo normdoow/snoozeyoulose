@@ -71,7 +71,7 @@
 }
 
 .take-space {
-    width: 280px;
+    width: 180px;
 }
 
 .hero-ball,
@@ -135,6 +135,10 @@
         margin-left: auto;
         -webkit-transform: translate(15%, 17%);
         transform: translate(15%, 17%)
+    }
+
+    .take-space {
+        width: 280px;
     }
 
     .hero-ball-2 {
@@ -206,6 +210,10 @@
         margin-left: auto;
         -webkit-transform: translate(15%, 17%);
         transform: translate(15%, 17%)
+    }
+
+    .take-space {
+        width: 280px;
     }
 
     .hero-form {
