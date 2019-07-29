@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,500,700" rel="stylesheet">
     <link rel="stylesheet" href="dist/css/style.css">
     <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="clock_assets/flipclock.css" />
 </head>
 <body class="is-boxed has-animations">
     <div class="body-wrap boxed-container">
@@ -54,6 +55,33 @@
                         <div class="hero-copy">
                             <div class="container-sm">
                                 <h1 class="hero-title h2-mobile mt-0 is-revealing">We're Building a Startup in 24 Hours!</h1>
+                                <div class="clock-builder-output" style="padding:5%"></div>
+                                <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+                                <script type="text/javascript" src="clock_assets/flipclock.js"></script>
+                                <style text="text/css">body .flip-clock-wrapper ul li a div div.inn, body .flip-clock-small-wrapper ul li a div div.inn { color: #CCCCCC; background-color: #333333; } body .flip-clock-dot, body .flip-clock-small-wrapper .flip-clock-dot { background: #323434; } body .flip-clock-wrapper .flip-clock-meridium a, body .flip-clock-small-wrapper .flip-clock-meridium a { color: #323434; }</style>
+                                <script type="text/javascript">
+                                $(function(){
+                                    FlipClock.Lang.Custom = { days:'Days', hours:'Hours', minutes:'Minutes', seconds:'Seconds' };
+                                    var opts = {
+                                        clockFace: 'DailyCounter',
+                                        countdown: true,
+                                        language: 'Custom'
+                                    };
+                                    opts.classes = {
+                                        active: 'flip-clock-active',
+                                        before: 'flip-clock-before',
+                                        divider: 'flip-clock-divider',
+                                        dot: 'flip-clock-dot',
+                                        label: 'flip-clock-label',
+                                        flip: 'flip',
+                                        play: 'play',
+                                        wrapper: 'flip-clock-small-wrapper'
+                                    };  
+                                    var countdown = 1565431200 - ((new Date().getTime())/1000); // from: 08/10/2019 06:00 am -0400
+                                    countdown = Math.max(1, countdown);
+                                    $('.clock-builder-output').FlipClock(countdown, opts);
+                                });
+                                </script>
                                 <p class="hero-paragraph is-revealing">Come join us on August 10th at 6am EST as we build and launch a startup live in 24 hours! <br/><br/>All you need to know is - it's a product that will help improve your morning routine!</p>
                                 <div class="hero-form newsletter-form field field-grouped is-revealing">
                                     <!-- Begin Mailchimp Signup Form -->
