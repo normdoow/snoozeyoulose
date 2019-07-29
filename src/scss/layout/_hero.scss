@@ -15,6 +15,13 @@
     @include font-weight(bold);
 }
 
+.snooze-lose-title {
+    color: #857DF3;
+    text-decoration: none;
+    font-style: italic;
+    @include font-weight(bold);
+}
+
 .hero-paragraph {
     margin-bottom: 32px;
 }
@@ -71,7 +78,7 @@
 }
 
 .take-space {
-    width: 180px;
+    width: 160px;
 }
 
 .hero-ball,
