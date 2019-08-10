@@ -4,49 +4,51 @@
 // --------------------------------------------
 $color: (
 	typography: (
-		1: #30323D,
-		2: #768696,
-		3: #9BACBD,
+		1: #161E2A,
+		2: #6B7A90,
 		1i: #FFF,
-		2i: rgba( #FFF, .8 )
+		2i: #606483
 	),
 	bg: (
 		1: #FFFFFF,
-		2: #F5F9FC,
-		3: #DDE7EF
+		2: #F3F4FF,
+		3: #E4E8EE,
+		1i: #0B0D19,
+		2i: #1E233D
 	),
 	primary: (
-		1: #9B95F3,
-		2: #DAD8FF,
-		3: #665DF0,
-		4: #F8F7FF
+		1: #4234F8,
+		2: #7065FA,
+		3: #1908F1,
+		4: #E2E0FE
  	),
- 	additional: (
-		1: #ff9801,
-		2: #F8778D,
-		3: #6EFACC
- 	)
+	secondary: (
+		1: #FF6C50,
+		2: #FF816A,
+		3: #FF411D,
+		4: #FFD8D1
+	)
 );
 
 // --------------------------------------------
 // Typography ---------------------------------
 // --------------------------------------------
 $font__family: (
-	base: '"Fira Sans", sans-serif', // font-family(base)
-	heading: '"Fira Sans", sans-serif', // font-family(heading)
+	base: '"Heebo", sans-serif', // font-family(base)
+	heading: '"Oxygen", sans-serif', // font-family(heading)
 	code: 'Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace', // font-family(code)
 	pre: '"Courier 10 Pitch", Courier, monospace' // font-family(pre)
 );
 
 $font__sizes: (
-	alpha:   ( 52px, 62px, -0.1px ), // font-size, line-height, kerning (use '0' if don't want to output any kerning)
-	beta:    ( 42px, 52px, -0.1px ),
-	gamma:   ( 36px, 46px, -0.1px ),
-	delta:   ( 24px, 34px, -0.1px ),
+	alpha:   ( 44px, 54px, 0px ),    // font-size, line-height, kerning (use '0' if don't want to output any kerning)
+	beta:    ( 38px, 48px, 0px ),
+	gamma:   ( 32px, 42px, 0px ),
+	delta:   ( 28px, 34px, 0px ),
 	epsilon: ( 20px, 30px, -0.1px ),
 	zeta:    ( 18px, 27px, -0.1px ),
-	eta:     ( 15px, 22px, 0px ),
-	theta:   ( 14px, 20px, 0px )
+	eta:     ( 16px, 24px, -0.1px ),
+	theta:   ( 14px, 22px, 0px )
 );
 
 $font__scale: (
@@ -54,20 +56,20 @@ $font__scale: (
 		1: map-get($font__sizes, alpha),   // H1
 		2: map-get($font__sizes, beta),    // H2
 		3: map-get($font__sizes, gamma),   // H3
-		4: map-get($font__sizes, delta),   // H4, H5, H6
-		5: map-get($font__sizes, epsilon), // Body
+		4: map-get($font__sizes, delta),   // H4
+		5: map-get($font__sizes, epsilon), // Body, H5, H6
 		6: map-get($font__sizes, zeta),    // Text small
-		7: map-get($font__sizes, eta),     // Text smaller, buttons
+		7: map-get($font__sizes, eta),     // Text smaller
 		8: map-get($font__sizes, theta)    // Footer area
 	),
 	mobile: (                              // i.e. $breakpoint__xs + $breakpoint__s (up to 600)
 		1: map-get($font__sizes, beta),    // H1
 		2: map-get($font__sizes, gamma),   // H2
 		3: map-get($font__sizes, delta),   // H3
-		4: map-get($font__sizes, epsilon), // H4, H5, H6
-		5: map-get($font__sizes, epsilon), // Body
+		4: map-get($font__sizes, delta),   // H4
+		5: map-get($font__sizes, epsilon), // Body, H5, H6
 		6: map-get($font__sizes, zeta),    // Text small
-		7: map-get($font__sizes, eta),     // Text smaller, buttons
+		7: map-get($font__sizes, eta),     // Text smaller
 		8: map-get($font__sizes, theta)    // Footer area
 	)
 );

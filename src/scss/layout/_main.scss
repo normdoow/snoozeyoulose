@@ -1,5 +1,5 @@
 .is-boxed {
-    background: color(bg, 2);
+    background: color(bg, 1);
 }
 
 .body-wrap {
@@ -30,20 +30,7 @@ main {
 @include media( '>medium' ) {
 
     .section-inner {
-        padding-top: 80px;
-        padding-bottom: 80px;
-    }
-}
-
-/* Align the page content vertically */
-@include media( '>large' ) {
-
-    main {
-        display: flex;
-        align-items: center;
-    }
-
-    .hero {
-        width: 100%;
+        padding-top: 88px;
+        padding-bottom: 88px;
     }
 }
