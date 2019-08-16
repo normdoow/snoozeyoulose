@@ -63,27 +63,11 @@ function onReceiveClientSecret(clientSecret) {
             } else {
                 // The setup has succeeded. Display a success message.
                 console.log('success got token', result)
-                apiRequest('PUT', 'http://localhost:5000/add_stripe_customer?user_id=' + '2343434' + '&=intent' + result)
+                apiRequest('PUT', 'http://localhost:5000/add_stripe_customer?user_id=' + '12345' + '&payment_method=' + result.setupIntent.payment_method + '&name=' + cardholderName.value)
             }
         });
     });
 }
-
-// Submit the form with the token ID.
-// function stripeTokenHandler(token) {
-//     // Insert the token ID into the form so it gets submitted to the server
-//     var form = document.getElementById('payment-form');
-//     var hiddenInput = document.createElement('input');
-//     hiddenInput.setAttribute('type', 'hidden');
-//     hiddenInput.setAttribute('name', 'stripeToken');
-//     hiddenInput.setAttribute('value', token.id);
-//     form.appendChild(hiddenInput);
-
-//     // Submit the form
-//     form.submit();
-// }
-
-
 
 function apiRequest(method, url, onSuccess) {
     // Set up our HTTP request
