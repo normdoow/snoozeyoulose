@@ -28,6 +28,17 @@ var card = elements.create('card', {style: style});
 // Add an instance of the card Element into the `card-element` <div>.
 card.mount('#card-element');
 
+var userId = 'none'
+if(getUrlVars()["user_id"] != null) {
+    userId = getUrlVars()["user_id"]
+} else {
+    userId = generateUUID()
+    // insert typeform into html
+    var link = document.getElementById("type-form");
+    link.setAttribute("href", 'https://noah596066.typeform.com/to/rnaqI8?user_id=' + userId)
+}
+console.log(userId)
+
 // Handle real-time validation errors from the card Element.
 // card.addEventListener('change', function(event) {
 //     var displayError = document.getElementById('card-errors');
@@ -63,7 +74,7 @@ function onReceiveClientSecret(clientSecret) {
             } else {
                 // The setup has succeeded. Display a success message.
                 console.log('success got token', result)
-                apiRequest('PUT', 'http://localhost:5000/add_stripe_customer?user_id=' + '12345' + '&payment_method=' + result.setupIntent.payment_method + '&name=' + cardholderName.value)
+                apiRequest('PUT', 'http://localhost:5000/add_stripe_customer?user_id=' + userId + '&payment_method=' + result.setupIntent.payment_method)
             }
         });
     });
@@ -92,4 +103,24 @@ function apiRequest(method, url, onSuccess) {
     // The second argument is the endpoint URL
     xhr.open(method, url);
     xhr.send();
+}
+
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+
+function generateUUID() { // Public Domain/MIT
+    var d = new Date().getTime();
+    if (typeof performance !== 'undefined' && typeof performance.now === 'function'){
+        d += performance.now(); //use high-precision timer if available
+    }
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+        var r = (d + Math.random() * 16) % 16 | 0;
+        d = Math.floor(d / 16);
+        return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+    });
 }
