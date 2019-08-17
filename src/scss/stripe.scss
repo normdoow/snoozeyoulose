@@ -56,7 +56,12 @@
      float: left;
      margin-left: 12px;
      margin-top: 24px;
+     z-index: 500;
  }
+ #card-button:active {
+    background: #7b7bad;
+ }
+
  .form-container {
      display: flex; 
      align-items: center; 

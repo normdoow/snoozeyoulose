@@ -56,7 +56,6 @@ function onReceiveClientSecret(clientSecret) {
     // var form = document.getElementById('save-button');
 
 
-    var cardholderName = document.getElementById('cardholder-name');
     var cardButton = document.getElementById('card-button');
     // var clientSecret = cardButton.dataset.secret;
 
@@ -65,7 +64,7 @@ function onReceiveClientSecret(clientSecret) {
         stripe.handleCardSetup(
             clientSecret, card, {
                 payment_method_data: {
-                    billing_details: {name: cardholderName.value}
+                    billing_details: {name: 'no_name'}
                 }
             }
         ).then(function(result) {
@@ -75,6 +74,7 @@ function onReceiveClientSecret(clientSecret) {
                 // The setup has succeeded. Display a success message.
                 console.log('success got token', result)
                 apiRequest('PUT', 'http://localhost:5000/add_stripe_customer?user_id=' + userId + '&payment_method=' + result.setupIntent.payment_method)
+                window.location.replace("https://snoozeyoulose.io")
             }
         });
     });
