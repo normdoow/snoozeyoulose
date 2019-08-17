@@ -1,8 +1,10 @@
 // Create a Stripe client.
-var stripe = Stripe('pk_test_ojswax7TBah8rWdod27onIFO00Szp1i4mf');
+var stripe = Stripe('pk_live_rXCEuBCvrxpJN7xTuXXq0k9000pgqRnipP');
 
 // Create an instance of Elements.
 var elements = stripe.elements();
+
+const baseUrl = 'https://snooze.mysql.pythonanywhere-services.com'
 
 // Custom styling can be passed to options when creating an Element.
 // (Note that this demo uses a wider set of styles than the guide below.)
@@ -49,7 +51,7 @@ console.log(userId)
 //     }
 // });
 
-apiRequest('GET', 'http://localhost:5000/signup_button', onReceiveClientSecret)
+apiRequest('GET', baseUrl + '/signup_button', onReceiveClientSecret)
 
 
 function onReceiveClientSecret(clientSecret) {
@@ -73,7 +75,7 @@ function onReceiveClientSecret(clientSecret) {
             } else {
                 // The setup has succeeded. Display a success message.
                 console.log('success got token', result)
-                apiRequest('PUT', 'http://localhost:5000/add_stripe_customer?user_id=' + userId + '&payment_method=' + result.setupIntent.payment_method)
+                apiRequest('PUT', baseUrl + '/add_stripe_customer?user_id=' + userId + '&payment_method=' + result.setupIntent.payment_method)
                 window.location.replace("https://snoozeyoulose.io")
             }
         });
