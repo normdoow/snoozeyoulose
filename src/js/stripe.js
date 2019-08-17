@@ -4,7 +4,7 @@ var stripe = Stripe('pk_live_rXCEuBCvrxpJN7xTuXXq0k9000pgqRnipP');
 // Create an instance of Elements.
 var elements = stripe.elements();
 
-const baseUrl = 'https://snooze.mysql.pythonanywhere-services.com'
+const baseUrl = 'https://snooze.pythonanywhere.com'
 
 // Custom styling can be passed to options when creating an Element.
 // (Note that this demo uses a wider set of styles than the guide below.)
